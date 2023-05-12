@@ -1,15 +1,20 @@
 import numpy as np
 import torch
 
+START_POINTS = {
+    "test_function_1": [np.array([1.2, 1.2]), np.array([-1.2, 1]), np.array([0.2, 0.8])],
+    "test_function_2": [np.array([-0.2, 1.2]), np.array([3.8, 0.1]), np.array([1.9, 0.6])]
+}
+
 
 class TestFunction:
     def __init__(self, f):
         self.function = f
 
-    def get_gradient(self, x:np.ndarray):
+    def get_gradient(self, x: np.ndarray):
         raise NotImplementedError()
 
-    def get_hessian(self, x:np.ndarray):
+    def get_hessian(self, x: np.ndarray):
         raise NotImplementedError()
 
 
@@ -34,7 +39,6 @@ class TestFunctionTorch(TestFunction):
 
 
 # https://en.wikipedia.org/wiki/Rosenbrock_function
-rosenbrock_func =\
+rosenbrock_func = \
     test_func_1 = TestFunctionTorch(lambda x: 100 * (x[1] - x[0] ** 2) ** 2 + (1 - x[0]) ** 2)
-test_func_2 = TestFunctionTorch(lambda x: 150*(x[0]*x[1]) ** 2 + (0.5*x[0] + 2*x[1] - 2)**2)
-
+test_func_2 = TestFunctionTorch(lambda x: 150 * (x[0] * x[1]) ** 2 + (0.5 * x[0] + 2 * x[1] - 2) ** 2)

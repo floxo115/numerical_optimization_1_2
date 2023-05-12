@@ -7,7 +7,7 @@ def plot_2d_contour(x, y, func):
     Z = np.stack((X, Y), axis=2)
     Z = np.apply_along_axis(func, 2, Z)
 
-    cs = plt.contourf(X, Y, Z)
+    cs = plt.contourf(X, Y, Z, levels=100)
     plt.colorbar(cs)
 
     return plt
