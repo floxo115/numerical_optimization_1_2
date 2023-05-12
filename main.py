@@ -1,20 +1,9 @@
 import numpy as np
-import torch.func
 
-import utils
-from derivative_approximation import cdf_grad
 from test_functions import test_func_1, test_func_2, START_POINTS
 from newton_method_mod import NewtonMethodWithModifiedHessian
 from utils import plot_2d_contour
 from matplotlib import pyplot as plt
-
-# print(test_functions.rosenbrock_func.get_gradient(np.array([1., 1.])))
-# plot = utils.plot_2d_contour(np.linspace(0, 1, 100), np.linspace(0, 1, 100),
-#                              test_functions.test_func_2.get_function())
-# plot.show()
-#
-# print(cdf_grad(lambda x: x ** 2, np.array([8]), 1))
-# print(test_functions.TestFunctionTorch(lambda x: x[0]**2 + x[1]**2).get_gradient(np.array([8.,8.])))
 
 f = test_func_1
 nm = NewtonMethodWithModifiedHessian(f)
@@ -27,8 +16,8 @@ for start_point in START_POINTS["test_function_1"]:
 
     print(f"needed {len(xs)} iterations")
 
-    x_lims = [-4,4]
-    y_lims = [-4,4]
+    x_lims = [-4, 4]
+    y_lims = [-4, 4]
 
     plot_2d_contour(
         np.linspace(x_lims[0], x_lims[1], 100),
@@ -53,8 +42,8 @@ for start_point in START_POINTS["test_function_2"]:
 
     print(f"needed {len(xs)} iterations")
 
-    x_lims = [-6,6]
-    y_lims = [-6,6]
+    x_lims = [-6, 6]
+    y_lims = [-6, 6]
 
     plot_2d_contour(
         np.linspace(x_lims[0], x_lims[1], 100),
