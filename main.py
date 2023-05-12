@@ -25,7 +25,7 @@ for start_point in START_POINTS["test_function_1"]:
         test_func_1.function
     )
 
-    plt.scatter([x[0] for x in xs], [x[1] for x in xs])
+    plt.scatter([x[0] for x in xs], [x[1] for x in xs], c=[i for i in range(len(xs))], cmap="plasma")
     plt.show()
 
     print(f"solution found at ({xs[-1][0]}, {xs[-1][1]})")
@@ -51,7 +51,7 @@ for start_point in START_POINTS["test_function_2"]:
         test_func_2.function
     )
 
-    plt.scatter([x[0] for x in xs], [x[1] for x in xs])
+    plt.scatter([x[0] for x in xs], [x[1] for x in xs], c=[i for i in range(len(xs))], cmap="plasma")
     plt.show()
     print(f"solution found at ({xs[-1][0]}, {xs[-1][1]})")
     print(f"solution value {f.function(xs[-1])}")
