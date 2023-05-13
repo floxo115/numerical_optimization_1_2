@@ -3,10 +3,7 @@ import numpy as np
 
 from line_search import backtracking_line_search
 from test_functions import TestFunction
-
-
-class MaxIterationsError(Exception):
-    pass
+from utils import MaxIterationsError
 
 
 class NewtonMethodWithModifiedHessian():

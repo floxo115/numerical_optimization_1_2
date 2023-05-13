@@ -11,3 +11,7 @@ def plot_2d_contour(x, y, func):
     plt.colorbar(cs)
 
     return plt
+
+
+class MaxIterationsError(Exception):
+    pass
