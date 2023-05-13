@@ -11,6 +11,9 @@ class TestFunction:
     def __init__(self, f):
         self.function = f
 
+    def __call__(self, x: np.ndarray):
+        raise NotImplementedError()
+
     def get_gradient(self, x: np.ndarray):
         raise NotImplementedError()
 
@@ -22,8 +25,12 @@ class TestFunctionTorch(TestFunction):
     def __init__(self, f):
         super().__init__(f)
 
-    def get_function(self):
-        return self.function
+    def __call__(self, x: np.ndarray):
+        if isinstance(x, np.ndarray):
+            x = torch.from_numpy(x)
+
+        return self.function(x).detach().numpy()
+
 
     def get_gradient(self, x):
         if isinstance(x, np.ndarray):

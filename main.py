@@ -10,7 +10,7 @@ def plot_test_run(f, xs, x_lims, y_lims):
     plot_2d_contour(
         np.linspace(x_lims[0], x_lims[1], 100),
         np.linspace(x_lims[0], x_lims[1], 100),
-        f.function
+        f
     )
 
     plt.scatter([x[0] for x in xs], [x[1] for x in xs], c=[i for i in range(len(xs))], cmap="plasma")
@@ -28,7 +28,7 @@ def run_test(description, f, start_points, optim, plot=False):
         print(f"needed {len(xs)} iterations")
 
         print(f"solution found at ({xs[-1][0]:.5}, {xs[-1][1]:.5})")
-        print(f"solution value {f.function(xs[-1]):.5}")
+        print(f"solution value {f(xs[-1]):.5}")
 
         if plot:
             plot_test_run(f, xs, [-6, 6], [-6, 6])
