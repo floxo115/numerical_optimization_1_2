@@ -142,3 +142,75 @@ test function 1; starting point ((1.9, 0.6))
 needed 40 iterations
 solution found at (2.7818e-10, 1.0)
 solution value 2.0999e-16
+----------------------------------------
+CG w. PR for Rosenbrock w. autog.
+test function 1; starting point ((1.2, 1.2))
+needed 77 iterations
+solution found at (1.0, 1.0)
+solution value 1.6282e-15
+----------------------------------------
+CG w. PR for Rosenbrock w. autog.
+test function 1; starting point ((-1.2, 1.0))
+needed 228 iterations
+solution found at (1.0, 1.0)
+solution value 1.8175e-14
+----------------------------------------
+CG w. PR for Rosenbrock w. autog.
+test function 1; starting point ((0.2, 0.8))
+needed 507 iterations
+solution found at (1.0, 1.0)
+solution value 7.1976e-13
+----------------------------------------
+CG w. PR for Rosenbrock w. approx..
+test function 1; starting point ((1.2, 1.2))
+needed 51 iterations
+solution found at (1.0, 1.0)
+solution value 4.978e-13
+----------------------------------------
+CG w. PR for Rosenbrock w. approx..
+test function 1; starting point ((-1.2, 1.0))
+needed 193 iterations
+solution found at (1.0, 1.0)
+solution value 7.5454e-13
+----------------------------------------
+CG w. PR for Rosenbrock w. approx..
+test function 1; starting point ((0.2, 0.8))
+needed 473 iterations
+solution found at (1.0, 1.0)
+solution value 3.4841e-13
+----------------------------------------
+CG w. PR for TestFunc2 w. autog.
+test function 1; starting point ((-0.2, 1.2))
+needed 62 iterations
+solution found at (-1.3716e-09, 1.0)
+solution value 2.0237e-14
+----------------------------------------
+CG w. PR for TestFunc2 w. autog.
+test function 1; starting point ((3.8, 0.1))
+needed 50 iterations
+solution found at (4.0, -6.1901e-10)
+solution value 3.9096e-13
+----------------------------------------
+CG w. PR for TestFunc2 w. autog.
+test function 1; starting point ((1.9, 0.6))
+needed 51 iterations
+solution found at (2.1723e-09, 1.0)
+solution value 4.9692e-14
+----------------------------------------
+CG w. PR for TestFunc2 w. autog.
+test function 1; starting point ((-0.2, 1.2))
+needed 203 iterations
+solution found at (1.2226e-09, 1.0)
+solution value 1.6362e-14
+----------------------------------------
+CG w. PR for TestFunc2 w. autog.
+test function 1; starting point ((3.8, 0.1))
+needed 179 iterations
+solution found at (4.0, 2.9065e-10)
+solution value 2.0203e-14
+----------------------------------------
+CG w. PR for TestFunc2 w. autog.
+test function 1; starting point ((1.9, 0.6))
+needed 215 iterations
+solution found at (4.0, 9.1866e-11)
+solution value 6.6123e-16
