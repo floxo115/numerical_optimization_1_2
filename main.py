@@ -1,5 +1,6 @@
 import numpy as np
 
+from conjugate_gradient import ConjugateGradientFR
 from test_functions import test_func_1_torch, test_func_2_torch, START_POINTS, test_func_1_approx, test_func_2_approx
 from newton_method_mod import NewtonMethodWithModifiedHessian
 from utils import plot_2d_contour
@@ -22,7 +23,7 @@ def plot_test_run(f, xs, x_lims, y_lims, desc=""):
 def run_test(description, f, start_points, optim, plot=False):
     for start_point in start_points:
         print("----------------------------------------")
-        print("desc")
+        print(description)
         print(f"test function 1; starting point ({start_point[0], start_point[1]})")
 
         xs = optim.run_optim(start_point)
@@ -32,24 +33,42 @@ def run_test(description, f, start_points, optim, plot=False):
         print(f"solution found at ({xs[-1][0]:.5}, {xs[-1][1]:.5})")
         print(f"solution value {f(xs[-1]):.5}")
 
+        optim.reset()
+
         if plot:
             plot_test_run(f, xs, [-6, 6], [-6, 6], description)
 
 
 f = test_func_1_torch
 nm = NewtonMethodWithModifiedHessian(f)
-run_test("NM w. Hessian Modificatoin for Rosenbrock w. autog.", f, START_POINTS["test_function_1"], nm, plot=True)
+run_test("NM w. Hessian Modification for Rosenbrock w. autog.", f, START_POINTS["test_function_1"], nm, plot=True)
 
 f = test_func_1_approx
 nm = NewtonMethodWithModifiedHessian(f)
-run_test("NM w. Hessian Modificatoin for Rosenbrock w. approx.", f, START_POINTS["test_function_1"], nm, plot=True)
+run_test("NM w. Hessian Modification for Rosenbrock w. approx.", f, START_POINTS["test_function_1"], nm, plot=True)
 
 
 f = test_func_2_torch
 nm = NewtonMethodWithModifiedHessian(f)
-run_test("NM w. Hessian Modificatoin for function 2 w. autog.", f, START_POINTS["test_function_2"], nm, plot=True)
+run_test("NM w. Hessian Modification for function 2 w. autog.", f, START_POINTS["test_function_2"], nm, plot=True)
 
 f = test_func_2_approx
 nm = NewtonMethodWithModifiedHessian(f)
-run_test("NM w. Hessian Modificatoin for function 2 w. approx.", f, START_POINTS["test_function_2"], nm, plot=True)
+run_test("NM w. Hessian Modification for function 2 w. approx.", f, START_POINTS["test_function_2"], nm, plot=True)
 
+f = test_func_1_torch
+cg = ConjugateGradientFR(f, 1)
+run_test("CG w. FR for Rosenbrock w. autog.", f, START_POINTS["test_function_1"], cg, plot=True)
+
+
+f = test_func_1_approx
+cg = ConjugateGradientFR(f, 1)
+run_test("CG w. FR for Rosenbrock w. approx..", f, START_POINTS["test_function_1"], cg, plot=True)
+
+f = test_func_2_torch
+cg = ConjugateGradientFR(f, 1)
+run_test("CG w. FR for TestFunc2 w. autog.", f, START_POINTS["test_function_2"], cg, plot=True)
+
+f = test_func_2_approx
+cg = ConjugateGradientFR(f, 1)
+run_test("CG w. FR for TestFunc2 w. autog.", f, START_POINTS["test_function_2"], cg, plot=True)
