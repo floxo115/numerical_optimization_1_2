@@ -62,3 +62,6 @@ class NewtonMethodWithModifiedHessian():
 
         xs.append(x)
         return xs
+
+    def reset(self):
+        pass
