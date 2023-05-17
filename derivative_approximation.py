@@ -4,7 +4,7 @@ import numpy as np
 # estimate gradient with central difference formula (Nocedal 196)
 def cdf_grad(f, x, epsilon=10 ** -6):
     size = x.size
-    gradient = np.zeros(size, dtype=np.float128)
+    gradient = np.zeros(size, dtype=np.float64)
 
     for i in range(size):
         e = np.zeros(size)
@@ -18,12 +18,12 @@ def cdf_grad(f, x, epsilon=10 ** -6):
 def cdf_hessian(f, x, epsilon=10 ** -7):
     size = x.size
 
-    hessian = np.zeros((size, size), dtype=np.float128)
+    hessian = np.zeros((size, size), dtype=np.float64)
 
     for row in range(size):
         for col in range(size):
-            e_i = np.zeros(size, dtype=np.float128)
-            e_j = np.zeros(size, dtype=np.float128)
+            e_i = np.zeros(size, dtype=np.float64)
+            e_j = np.zeros(size, dtype=np.float64)
             e_i[row] = 1
             e_j[col] = 1
 
