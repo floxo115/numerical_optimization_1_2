@@ -1,0 +1,144 @@
+----------------------------------------
+NM w. Hessian Modification for Rosenbrock w. autog.
+test function 1; starting point ((1.2, 1.2))
+needed 10 iterations
+solution found at (1.0, 1.0)
+solution value 1.0883e-25
+----------------------------------------
+NM w. Hessian Modification for Rosenbrock w. autog.
+test function 1; starting point ((-1.2, 1.0))
+needed 23 iterations
+solution found at (1.0, 1.0)
+solution value 3.744e-21
+----------------------------------------
+NM w. Hessian Modification for Rosenbrock w. autog.
+test function 1; starting point ((0.2, 0.8))
+needed 10 iterations
+solution found at (1.0, 1.0)
+solution value 1.7009e-20
+----------------------------------------
+NM w. Hessian Modification for Rosenbrock w. approx.
+test function 1; starting point ((1.2, 1.2))
+needed 10 iterations
+solution found at (1.0, 1.0)
+solution value 3.5805e-20
+----------------------------------------
+NM w. Hessian Modification for Rosenbrock w. approx.
+test function 1; starting point ((-1.2, 1.0))
+needed 23 iterations
+solution found at (1.0, 1.0)
+solution value 1.1493e-16
+----------------------------------------
+NM w. Hessian Modification for Rosenbrock w. approx.
+test function 1; starting point ((0.2, 0.8))
+needed 8 iterations
+solution found at (1.0, 1.0)
+solution value 2.6689e-16
+----------------------------------------
+NM w. Hessian Modification for function 2 w. autog.
+test function 1; starting point ((-0.2, 1.2))
+needed 7 iterations
+solution found at (-4.8343e-12, 1.0)
+solution value 7.0928e-19
+----------------------------------------
+NM w. Hessian Modification for function 2 w. autog.
+test function 1; starting point ((3.8, 0.1))
+needed 7 iterations
+solution found at (4.0, -1.1147e-11)
+solution value 2.9237e-18
+----------------------------------------
+NM w. Hessian Modification for function 2 w. autog.
+test function 1; starting point ((1.9, 0.6))
+needed 9 iterations
+solution found at (4.0, -1.2673e-12)
+solution value 1.0286e-19
+----------------------------------------
+NM w. Hessian Modification for function 2 w. approx.
+test function 1; starting point ((-0.2, 1.2))
+needed 7 iterations
+solution found at (-4.8265e-12, 1.0)
+solution value 6.5468e-19
+----------------------------------------
+NM w. Hessian Modification for function 2 w. approx.
+test function 1; starting point ((3.8, 0.1))
+needed 7 iterations
+solution found at (4.0, -1.0015e-11)
+solution value 1.1043e-18
+----------------------------------------
+NM w. Hessian Modification for function 2 w. approx.
+test function 1; starting point ((1.9, 0.6))
+needed 11 iterations
+solution found at (4.0, 7.3102e-11)
+solution value 1.286e-16
+----------------------------------------
+CG w. FR for Rosenbrock w. autog.
+test function 1; starting point ((1.2, 1.2))
+needed 57 iterations
+solution found at (1.0, 1.0)
+solution value 4.8867e-13
+----------------------------------------
+CG w. FR for Rosenbrock w. autog.
+test function 1; starting point ((-1.2, 1.0))
+needed 326 iterations
+solution found at (1.0, 1.0)
+solution value 3.4514e-13
+----------------------------------------
+CG w. FR for Rosenbrock w. autog.
+test function 1; starting point ((0.2, 0.8))
+needed 93 iterations
+solution found at (1.0, 1.0)
+solution value 1.1292e-12
+----------------------------------------
+CG w. FR for Rosenbrock w. approx..
+test function 1; starting point ((1.2, 1.2))
+needed 109 iterations
+solution found at (1.0, 1.0)
+solution value 2.3973e-13
+----------------------------------------
+CG w. FR for Rosenbrock w. approx..
+test function 1; starting point ((-1.2, 1.0))
+needed 232 iterations
+solution found at (1.0, 1.0)
+solution value 3.4009e-14
+----------------------------------------
+CG w. FR for Rosenbrock w. approx..
+test function 1; starting point ((0.2, 0.8))
+needed 92 iterations
+solution found at (1.0, 1.0)
+solution value 3.9333e-13
+----------------------------------------
+CG w. FR for TestFunc2 w. autog.
+test function 1; starting point ((-0.2, 1.2))
+needed 312 iterations
+solution found at (-1.7567e-09, 1.0)
+solution value 7.0308e-15
+----------------------------------------
+CG w. FR for TestFunc2 w. autog.
+test function 1; starting point ((3.8, 0.1))
+needed 138 iterations
+solution found at (4.0, 6.8297e-10)
+solution value 5.5799e-13
+----------------------------------------
+CG w. FR for TestFunc2 w. autog.
+test function 1; starting point ((1.9, 0.6))
+needed 46 iterations
+solution found at (-1.3147e-09, 1.0)
+solution value 1.3623e-14
+----------------------------------------
+CG w. FR for TestFunc2 w. autog.
+test function 1; starting point ((-0.2, 1.2))
+needed 265 iterations
+solution found at (-2.4138e-09, 1.0)
+solution value 4.1468e-14
+----------------------------------------
+CG w. FR for TestFunc2 w. autog.
+test function 1; starting point ((3.8, 0.1))
+needed 186 iterations
+solution found at (4.0, -3.5726e-10)
+solution value 4.4745e-14
+----------------------------------------
+CG w. FR for TestFunc2 w. autog.
+test function 1; starting point ((1.9, 0.6))
+needed 40 iterations
+solution found at (2.7818e-10, 1.0)
+solution value 2.0999e-16
