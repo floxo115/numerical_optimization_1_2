@@ -1,12 +1,13 @@
 from line_search import backtracking_line_search
+from optimizer_base import OptimizerBase
 from utils import MaxIterationsError
 import numpy as np
 from test_functions import TestFunction
 
 
-class QuasiNewtonBFGS:
+class QuasiNewtonBFGS(OptimizerBase):
     def __init__(self, f: TestFunction, size_x: int, alpha):
-        self.f = f
+        super().__init__(f)
         self.size_x = size_x
         self.Q = np.eye(size_x)
         self.alpha = alpha
@@ -35,31 +36,13 @@ class QuasiNewtonBFGS:
 
         return x_cur
 
-    def run_optim(self, start: np.ndarray, stop_grad=10 ** -6, max_iterations=1000):
-        k = 0
-        x = start
-        xs = [x]
-        while True:
-            if np.linalg.norm(self.f.get_gradient(x)) < stop_grad:
-                break
-            if k > max_iterations:
-                raise MaxIterationsError()
-
-            x = self.step(x)
-            xs.append(x)
-
-            k += 1
-
-        xs.append(x)
-        return xs
-
     def reset(self):
         self.Q = np.eye(self.size_x)
 
 
-class QuasiNewtonSR1:
+class QuasiNewtonSR1(OptimizerBase):
     def __init__(self, f: TestFunction, size_x: int, alpha):
-        self.f = f
+        super().__init__(f)
         self.size_x = size_x
         self.H = np.eye(size_x)
         self.alpha = alpha
@@ -85,24 +68,6 @@ class QuasiNewtonSR1:
             self.reset()
 
         return x_cur
-
-    def run_optim(self, start: np.ndarray, stop_grad=10 ** -6, max_iterations=1000):
-        k = 0
-        x = start
-        xs = [x]
-        while True:
-            if np.linalg.norm(self.f.get_gradient(x)) < stop_grad:
-                break
-            if k > max_iterations:
-                raise MaxIterationsError()
-
-            x = self.step(x)
-            xs.append(x)
-
-            k += 1
-
-        xs.append(x)
-        return xs
 
     def reset(self):
         self.H = np.eye(self.size_x)
