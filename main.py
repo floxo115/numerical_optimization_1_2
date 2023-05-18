@@ -25,7 +25,7 @@ def run_test(description, f, start_points, optim, plot=False):
     for start_point in start_points:
         print("----------------------------------------")
         print(description)
-        print(f"test function 1; starting point ({start_point[0], start_point[1]})")
+        print(f"starting point ({start_point[0], start_point[1]})")
 
         xs = optim.run_optim(start_point)
 
