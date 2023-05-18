@@ -5,7 +5,7 @@ from utils import MaxIterationsError
 import numpy as np
 
 
-class ConjugateGradientNonLinear(OptimizerBase):
+class ConjugateGradientNonLinearBase(OptimizerBase):
     def __init__(self, f: TestFunction, alpha: float):
         super().__init__(f)
         self.alpha = alpha
@@ -20,7 +20,7 @@ class ConjugateGradientNonLinear(OptimizerBase):
         self.last_nabla_x = None
 
 
-class ConjugateGradientFR(ConjugateGradientNonLinear):
+class ConjugateGradientFR(ConjugateGradientNonLinearBase):
 
     def step(self, x):
         nabla_x = self.f.get_gradient(x)
@@ -38,7 +38,7 @@ class ConjugateGradientFR(ConjugateGradientNonLinear):
         return x + alpha * d
 
 
-class ConjugateGradientPR(ConjugateGradientNonLinear):
+class ConjugateGradientPR(ConjugateGradientNonLinearBase):
     def step(self, x):
         nabla_x = self.f.get_gradient(x)
 
