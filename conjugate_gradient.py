@@ -1,12 +1,13 @@
 import line_search
+from optimizer_base import OptimizerBase
 from test_functions import TestFunction
 from utils import MaxIterationsError
 import numpy as np
 
 
-class ConjugateGradientNonLinear:
+class ConjugateGradientNonLinear(OptimizerBase):
     def __init__(self, f: TestFunction, alpha: float):
-        self.f = f
+        super().__init__(f)
         self.alpha = alpha
         self.last_nabla_x = None
         self.last_d = None
@@ -17,24 +18,6 @@ class ConjugateGradientNonLinear:
     def reset(self):
         self.last_d = None
         self.last_nabla_x = None
-
-    def run_optim(self, start: np.ndarray, stop_grad=10 ** -6, max_iterations=1000):
-        k = 0
-        x = start
-        xs = [x]
-        while True:
-            if np.linalg.norm(self.f.get_gradient(x)) < stop_grad:
-                break
-            if k > max_iterations:
-                raise MaxIterationsError()
-
-            x = self.step(x)
-            xs.append(x)
-
-            k += 1
-
-        xs.append(x)
-        return xs
 
 
 class ConjugateGradientFR(ConjugateGradientNonLinear):
