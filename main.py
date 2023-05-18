@@ -1,6 +1,7 @@
 import numpy as np
 
 from conjugate_gradient import ConjugateGradientFR, ConjugateGradientPR
+from quasinewton import QuasiNewtonBFGS
 from test_functions import test_func_1_torch, test_func_2_torch, START_POINTS, test_func_1_approx, test_func_2_approx
 from newton_method_mod import NewtonMethodWithModifiedHessian
 from utils import plot_2d_contour
@@ -39,6 +40,9 @@ def run_test(description, f, start_points, optim, plot=False):
             plot_test_run(f, xs, [-6, 6], [-6, 6], description)
 
 
+print("-"*80)
+print("TESTING NM with mod")
+
 f = test_func_1_torch
 nm = NewtonMethodWithModifiedHessian(f)
 run_test("NM w. Hessian Modification for Rosenbrock w. autog.", f, START_POINTS["test_function_1"], nm, plot=True)
@@ -54,6 +58,9 @@ run_test("NM w. Hessian Modification for function 2 w. autog.", f, START_POINTS[
 f = test_func_2_approx
 nm = NewtonMethodWithModifiedHessian(f)
 run_test("NM w. Hessian Modification for function 2 w. approx.", f, START_POINTS["test_function_2"], nm, plot=True)
+
+print("-"*80)
+print("TESTING CG")
 
 f = test_func_1_torch
 cg = ConjugateGradientFR(f, 1)
@@ -86,3 +93,22 @@ run_test("CG w. PR for TestFunc2 w. autog.", f, START_POINTS["test_function_2"],
 f = test_func_2_approx
 cg = ConjugateGradientPR(f, 0.01)
 run_test("CG w. PR for TestFunc2 w. autog.", f, START_POINTS["test_function_2"], cg, plot=True)
+
+print("-"*80)
+print("TESTING QN")
+
+f = test_func_1_torch
+qn = QuasiNewtonBFGS(f, 2, 1)
+run_test("QN w. BFGS for Rosenbrock w. autog.", f, START_POINTS["test_function_1"], qn, plot=True)
+
+f = test_func_1_approx
+qn = QuasiNewtonBFGS(f, 2, 1)
+run_test("QN w. BFGS for Rosenbrock w. approx.", f, START_POINTS["test_function_1"], qn, plot=True)
+
+f = test_func_2_torch
+qn = QuasiNewtonBFGS(f, 2, 1)
+run_test("QN w. BFGS for testfunc 2 w. autog.", f, START_POINTS["test_function_2"], qn, plot=True)
+
+f = test_func_2_approx
+qn = QuasiNewtonBFGS(f, 2, 1)
+run_test("QN w. BFGS for testfunc2 w. approx.", f, START_POINTS["test_function_2"], qn, plot=True)
