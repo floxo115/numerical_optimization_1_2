@@ -292,3 +292,75 @@ test function 1; starting point ((1.9, 0.6))
 needed 22 iterations
 solution found at (6.5007e-12, 1.0)
 solution value 4.8366e-19
+----------------------------------------
+QN w. SR1 for Rosenbrock w. autog.
+test function 1; starting point ((1.2, 1.2))
+needed 15 iterations
+solution found at (1.0, 1.0)
+solution value 1.4691e-18
+----------------------------------------
+QN w. SR1 for Rosenbrock w. autog.
+test function 1; starting point ((-1.2, 1.0))
+needed 45 iterations
+solution found at (1.0, 1.0)
+solution value 1.2073e-17
+----------------------------------------
+QN w. SR1 for Rosenbrock w. autog.
+test function 1; starting point ((0.2, 0.8))
+needed 31 iterations
+solution found at (1.0, 1.0)
+solution value 1.7247e-19
+----------------------------------------
+QN w. SR1 for Rosenbrock w. approx.
+test function 1; starting point ((-0.2, 1.2))
+needed 14 iterations
+solution found at (-8.8148e-10, 1.0)
+solution value 2.8111e-15
+----------------------------------------
+QN w. SR1 for Rosenbrock w. approx.
+test function 1; starting point ((3.8, 0.1))
+needed 9 iterations
+solution found at (4.0, -2.397e-13)
+solution value 2.1483e-21
+----------------------------------------
+QN w. SR1 for Rosenbrock w. approx.
+test function 1; starting point ((1.9, 0.6))
+needed 23 iterations
+solution found at (3.0209e-14, 1.0)
+solution value 4.5585e-24
+----------------------------------------
+QN w. SR1 for testfunc 2 w. autog.
+test function 1; starting point ((-0.2, 1.2))
+needed 14 iterations
+solution found at (-8.8148e-10, 1.0)
+solution value 2.8111e-15
+----------------------------------------
+QN w. SR1 for testfunc 2 w. autog.
+test function 1; starting point ((3.8, 0.1))
+needed 9 iterations
+solution found at (4.0, -2.397e-13)
+solution value 2.1483e-21
+----------------------------------------
+QN w. SR1 for testfunc 2 w. autog.
+test function 1; starting point ((1.9, 0.6))
+needed 21 iterations
+solution found at (6.1604e-10, 1.0)
+solution value 6.7476e-17
+----------------------------------------
+QN w. SR1 for testfunc2 w. approx.
+test function 1; starting point ((-0.2, 1.2))
+needed 14 iterations
+solution found at (-8.8148e-10, 1.0)
+solution value 2.8111e-15
+----------------------------------------
+QN w. SR1 for testfunc2 w. approx.
+test function 1; starting point ((3.8, 0.1))
+needed 9 iterations
+solution found at (4.0, -2.397e-13)
+solution value 2.1483e-21
+----------------------------------------
+QN w. SR1 for testfunc2 w. approx.
+test function 1; starting point ((1.9, 0.6))
+needed 23 iterations
+solution found at (3.0209e-14, 1.0)
+solution value 4.5585e-24
