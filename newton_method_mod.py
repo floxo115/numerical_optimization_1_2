@@ -4,11 +4,12 @@ import numpy as np
 from line_search import backtracking_line_search
 from test_functions import TestFunction
 from utils import MaxIterationsError
+from optimizer_base import OptimizerBase
 
 
-class NewtonMethodWithModifiedHessian():
+class NewtonMethodWithModifiedHessian(OptimizerBase):
     def __init__(self, f: TestFunction):
-        self.f = f
+        super().__init__(f)
 
     # algorithm 3.2
     def step(self, x):
@@ -44,24 +45,6 @@ class NewtonMethodWithModifiedHessian():
                 break
 
         return L @ L.T
-
-    def run_optim(self, start: np.ndarray, stop_grad=10 ** -6, max_iterations=1000):
-        k = 0
-        x = start
-        xs = [x]
-        while True:
-            if np.linalg.norm(self.f.get_gradient(x)) < stop_grad:
-                break
-            if k > max_iterations:
-                raise MaxIterationsError()
-
-            x = self.step(x)
-            xs.append(x)
-
-            k += 1
-
-        xs.append(x)
-        return xs
 
     def reset(self):
         pass
