@@ -1,7 +1,7 @@
 import numpy as np
 
 from conjugate_gradient import ConjugateGradientFR, ConjugateGradientPR
-from quasinewton import QuasiNewtonBFGS
+from quasinewton import QuasiNewtonBFGS, QuasiNewtonSR1
 from test_functions import test_func_1_torch, test_func_2_torch, START_POINTS, test_func_1_approx, test_func_2_approx
 from newton_method_mod import NewtonMethodWithModifiedHessian
 from utils import plot_2d_contour
@@ -112,3 +112,19 @@ run_test("QN w. BFGS for testfunc 2 w. autog.", f, START_POINTS["test_function_2
 f = test_func_2_approx
 qn = QuasiNewtonBFGS(f, 2, 1)
 run_test("QN w. BFGS for testfunc2 w. approx.", f, START_POINTS["test_function_2"], qn, plot=True)
+
+f = test_func_1_torch
+qn = QuasiNewtonSR1(f, 2, 1)
+run_test("QN w. SR1 for Rosenbrock w. autog.", f, START_POINTS["test_function_1"], qn, plot=True)
+
+f = test_func_2_approx
+qn = QuasiNewtonSR1(f, 2, 1)
+run_test("QN w. SR1 for Rosenbrock w. approx.", f, START_POINTS["test_function_2"], qn, plot=True)
+
+f = test_func_2_torch
+qn = QuasiNewtonSR1(f, 2, 1)
+run_test("QN w. SR1 for testfunc 2 w. autog.", f, START_POINTS["test_function_2"], qn, plot=True)
+
+f = test_func_2_approx
+qn = QuasiNewtonSR1(f, 2, 1)
+run_test("QN w. SR1 for testfunc2 w. approx.", f, START_POINTS["test_function_2"], qn, plot=True)
