@@ -8,6 +8,11 @@ START_POINTS = {
     "test_function_2": [np.array([-0.2, 1.2]), np.array([3.8, 0.1]), np.array([1.9, 0.6])]
 }
 
+MINIMA_POINTS = {
+    "test_function_1": np.array([1., 1.]),
+    "test_function_2": np.array([[4., 0.], [0., 1.]])
+}
+
 
 class TestFunction:
     def __init__(self, f):
